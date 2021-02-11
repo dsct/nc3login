@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><script type="text/javascript">
+<!--
+var qsParm = new Array();
+var query = window.location.search.substring(1);
+var parms = query.split('&');
+for (var i=0; i<parms.length; i++) {
+var pos = parms[i].indexOf('=');
+if (pos > 0) {
+var key = parms[i].substring(0,pos);
+var val = parms[i].substring(pos+1);
+qsParm[key] = val;
+}
+}
+function into(){
+document.getElementById("UserUsername").value = qsParm["username"];
+document.getElementById("UserPassword").value = qsParm["password"];
+document.getElementById("nclogin").click();
+}
+// -->
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>ポータルサイトへログイン</title><link href="style.css" rel="stylesheet" type="text/css" /></head><body onload="into()"><form action="https://cms.js.doshisha.ac.jp/auth_general/auth_general/login" id="AuthGeneral" ng-submit="submit($event)" novalidate="novalidate" method="post" accept-charset="utf-8" class="ng-pristine ng-valid"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div><div class="panel-body"><div class="form-group"><label for="UserUsername" class="control-label">ログインID</label><input name="data[User][username]" placeholder="ログインIDを入力" class="form-control allow-submit" maxlength="255" type="text" id="UserUsername"></div><div class="form-group"><label for="UserPassword" class="control-label">パスワード</label><input name="data[User][password]" placeholder="パスワードを入力" class="form-control allow-submit" type="password" id="UserPassword"></div><center><button id="nclogin" class="btn" type="submit">ログイン</button></center>ログイン中です。しばらくお待ちください。<br>リダイレクトされない場合はIDとパスワードが間違っている可能性があります。</body></html>
