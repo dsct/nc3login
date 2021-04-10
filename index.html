@@ -23,6 +23,27 @@
     </script>
     <title>ログイン処理中</title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <style>
+      html,body{
+        height: 100%;
+        width: 100%;
+      }
+      body{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-width: 65px;
+        min-height: 65px;
+        background-color: #303030;
+      }
+      .centerMiddle{
+        margin: -32.5px 0 0 -32.5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+    </style>
   </head>
   <body onload="into()">
     <form action="https://cms.js.doshisha.ac.jp/auth_general/auth_general/login" id="AuthGeneral" ng-submit="submit($event)" novalidate="novalidate" method="post" accept-charset="utf-8">
@@ -32,11 +53,45 @@
       <input name="data[User][password]" type="password" id="UserPassword">
       <button id="nclogin" type="submit"></button>
     </div>
-    ログイン処理中です<br>
-    ログインに失敗する場合は、このページのURLが正確か確認してください(<em>https://dsct.github.io/nc3login/?username=ユーザー名&password=パスワード</em>)<br>
-    このページのソースは<a href="https://github.com/dsct/nc3login">Github</a>にあります
-    <noscript>
-      <br><br>JavaScriptが無効になっています。JavaScriptを有効にしてください。
-    </noscript>
+    <div class="centerMiddle">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
